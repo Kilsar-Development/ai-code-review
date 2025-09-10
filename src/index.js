@@ -20,6 +20,8 @@ const main = async () => {
         }
 
         const commentBody = `${AI_REVIEW_COMMENT_PREFIX}${inputProcessor.headCommit}${SUMMARY_SEPARATOR}${reviewSummary}`;
+        core.info(`Comment body: ${commentBody}`);
+
         await inputProcessor.githubAPI.createPRComment(
             inputProcessor.owner, 
             inputProcessor.repo, 

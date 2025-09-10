@@ -88,6 +88,7 @@ class InputProcessor {
         this._fileCommentator = null;
         this._reviewRulesFile = null;
         this._reviewRulesContent = null;
+        this._messagePrefix = null;
     }
 
     /* ----------------------------- Public API ------------------------------ */
@@ -119,6 +120,7 @@ class InputProcessor {
         this._includePaths = sanitizePath(core.getInput("include_paths"));
         this._excludePaths = sanitizePath(core.getInput("exclude_paths"));
         this._reviewRulesFile = sanitizePath(core.getInput("review_rules_file"));
+        this._messagePrefix = sanitizeString(core.getInput("message_prefix"));
 
         if (!this._includeExtensions) {
             core.info("Using default: include all extensions");
@@ -135,6 +137,9 @@ class InputProcessor {
 
         if (!this._reviewRulesFile) {
             core.info("No custom review rules file specified.");
+        }
+        if (!this._messagePrefix) {
+            core.info("Using default: 'AI Code Review: '");
         }
     }
 
