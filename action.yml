@@ -82,10 +82,9 @@ inputs:
   review_rules_file:
     description: 'Path to a file containing custom review rules to be added to the AI system prompt.'
     required: false
-  meesage_prefix:
+  message_prefix:
     description: 'Prefix to add to the review message'
     required: false
-    default: 'AI Code Review: '
 
 runs:
   using: 'node20'

@@ -134,13 +134,11 @@ class InputProcessor {
         if (!this._excludePaths) {
             core.info("Using default: exclude no paths");
         }
-
         if (!this._reviewRulesFile) {
             core.info("No custom review rules file specified.");
         }
-        if (!this._messagePrefix) {
-            core.info("Using default: 'AI Code Review: '");
-        }
+
+        core.info(`Using message prefix: ${this._messagePrefix}`);
     }
 
     _validateInputs() {
