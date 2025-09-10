@@ -267,7 +267,7 @@ class InputProcessor {
                 this._repo,
                 this._pullNumber,
                 this._headCommit,
-                comment,
+                this._messagePrefix + comment,
                 filePath,
                 side,
                 startLineNumber,
