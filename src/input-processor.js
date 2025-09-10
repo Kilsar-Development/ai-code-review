@@ -120,7 +120,7 @@ class InputProcessor {
         this._includePaths = sanitizePath(core.getInput("include_paths"));
         this._excludePaths = sanitizePath(core.getInput("exclude_paths"));
         this._reviewRulesFile = sanitizePath(core.getInput("review_rules_file"));
-        this._messagePrefix = sanitizeString(core.getInput("message_prefix"));
+        this._messagePrefix = sanitizeString(core.getInput("message_prefix", { required: false, trimWhitespace: false }));
 
         if (!this._includeExtensions) {
             core.info("Using default: include all extensions");
